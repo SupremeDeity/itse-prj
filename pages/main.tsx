@@ -3,6 +3,7 @@ import styles from "@/styles/main.module.css";
 import { Auth, signOut } from "firebase/auth";
 import { Kanit } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -36,7 +37,7 @@ export default function Main() {
           </li>
           <li className={styles.item}>
             {" "}
-            <a href="#">Services</a>
+            <Link href={"/services"}>Services</Link>
           </li>
           <li className={styles.item}>
             <a href="#">Workout</a>

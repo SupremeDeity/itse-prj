@@ -1,0 +1,58 @@
+#body {
+  /* line-height: 24px; */
+  font-size: 16px;
+  background-color: rgb(4, 4, 70);
+}
+
+.container {
+  padding: 1px 0;
+  margin: 0 auto;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+  color: wheat;
+}
+
+.heading h4 {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+.heading p {
+  font-size: 1.1rem;
+  padding-bottom: 20px;
+}
+
+.gymthings {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.strength_equipments {
+  flex-basis: 30%;
+  text-align: center;
+}
+
+.strength_equipments h2 {
+  text-align: center;
+  background-color: rgb(52, 16, 82);
+  padding: 10px 0px;
+  text-transform: uppercase;
+  color: whitesmoke;
+  font-size: 26px;
+}
+
+.StrengthArea_img {
+  border: 2px solid wheat;
+  margin: 20px 0;
+  padding: 20px 0;
+  max-width: 512px;
+  max-height: 512px;
+  border: 3px solid #ddd;
+  padding: 3px;
+}
