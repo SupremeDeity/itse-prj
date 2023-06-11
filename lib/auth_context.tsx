@@ -34,6 +34,16 @@ export const AuthContextProvider = ({
     return () => unsubscribe();
   }, []);
 
+  const [progress, setProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(
+      () => setProgress(progress >= 100 ? progress : progress + 10),
+      300
+    );
+    return () => clearInterval(timer);
+  }, [progress]);
+
   const signUp = (email: string, password: string) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -52,7 +62,7 @@ export const AuthContextProvider = ({
       {loading ? (
         <>
           <Progress
-            value={55}
+            value={progress}
             style={{
               width: "30%",
               top: "50%",
