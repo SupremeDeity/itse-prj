@@ -7,6 +7,7 @@ import {
   User,
 } from "firebase/auth";
 import { auth } from "./firebase";
+import { Progress } from "@/components/ui/progress";
 
 const AuthContext = createContext({});
 
@@ -27,8 +28,8 @@ export const AuthContextProvider = ({
       } else {
         setUser(null);
       }
+      setLoading(false);
     });
-    setLoading(false);
 
     return () => unsubscribe();
   }, []);
@@ -47,8 +48,22 @@ export const AuthContextProvider = ({
   };
 
   return (
-    <AuthContext.Provider value={{ user, signUp, logIn, logOut }}>
-      {loading ? null : children}
+    <AuthContext.Provider value={{ user, signUp, logIn, logOut, loading }}>
+      {loading ? (
+        <>
+          <Progress
+            value={55}
+            style={{
+              width: "30%",
+              top: "50%",
+              left: "30%",
+              position: "absolute",
+            }}
+          />
+        </>
+      ) : (
+        children
+      )}
     </AuthContext.Provider>
   );
 };
